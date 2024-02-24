@@ -8,6 +8,7 @@ import { AuthModule } from './component/auth/auth.module';
 import { OrganizationModule } from './component/organization/organization.module';
 import { DeviceModule } from './component/device/device.module';
 import { AdminModule } from './component/admin/admin.module';
+import { EquipmentModule } from './component/equipment/equipment.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AdminModule } from './component/admin/admin.module';
     OrganizationModule.forRoot(),
     DeviceModule.forRoot(),
     AdminModule.forRoot(),
+    EquipmentModule.forRoot(),
   ],
   controllers: [AppController],
   providers: [AppService],
