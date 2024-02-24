@@ -2,8 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { ObjectId } from 'mongoose';
 
 export class CreateEquipmentDTO {
-  @ApiProperty()
-  _id: ObjectId;
 
   @ApiProperty()
   manufacturer: string;
