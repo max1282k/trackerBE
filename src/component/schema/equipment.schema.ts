@@ -3,11 +3,49 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class Equipment extends Document {
-  @Prop({ required: true })
+  @Prop()
   manufacturer: string;
 
-  @Prop({ required: true })
+  @Prop()
   equipmentModel: string;
+
+  @Prop({ required: true })
+  imei: string;
+
+  @Prop({ required: true })
+  machineName: string;
+
+  @Prop({ required: true })
+  client: string;
+
+  @Prop({ required: true })
+  machineModel: string;
+
+  @Prop({ required: true })
+  brand: string;
+
+  @Prop({ required: true })
+  category: string;
+
+  @Prop({ required: true })
+  states: string;
+
+  @Prop({ required: true })
+  department: string;
+
+  @Prop({ required: true })
+  interval: string;
+  @Prop({ required: true })
+  lastMaintenance: string;
+
+  @Prop({ required: true })
+  initialMaintenance: string;
+
+  @Prop({ required: true })
+  smartDevice: boolean;
+
+  @Prop({ required: true })
+  serialNumber: string;
 
   @Prop()
   speed?: string;
