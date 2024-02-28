@@ -97,4 +97,10 @@ export class CreateEquipmentDTO {
 
   @ApiProperty()
   transmissionWarningPID?: string;
+
+  @ApiProperty()
+  latitude?: string;
+
+  @ApiProperty()
+  longitude?: string;
 }

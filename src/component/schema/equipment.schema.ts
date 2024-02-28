@@ -97,6 +97,12 @@ export class Equipment extends Document {
 
   @Prop()
   transmissionWarningPID?: string;
+
+  @Prop()
+  latitude?: string;
+
+  @Prop()
+  longitude?: string;
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);
