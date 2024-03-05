@@ -1,4 +1,8 @@
-import { Injectable, BadRequestException } from '@nestjs/common';
+import {
+  Injectable,
+  BadRequestException,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 
 import { Model } from 'mongoose';
@@ -58,6 +62,14 @@ export class EquipmentService {
       return equipments;
     } catch (error) {
       throw new BadRequestException(error?.message);
+    }
+  }
+  async getEquipmentById(id: string): Promise<Equipment | null> {
+    try {
+      const equipment = await this._equipmentModel.findById(id);
+      return equipment;
+    } catch (error) {
+      throw new NotFoundException(`Equipment with id ${id} not found`);
     }
   }
 }

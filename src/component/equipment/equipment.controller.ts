@@ -46,4 +46,12 @@ export class EquipmentController {
   async getEquipment() {
     return this.equipmentService.getEquipment();
   }
+
+  @ApiBearerAuth()
+  @UseGuards(JwtSuperAdminAuthGuard)
+  @UseGuards(JwtAuthGuard)
+  @Get('getEquipmentById/:id')
+  async getEquipmentById(@Param('id') id: string) {
+    return this.equipmentService.getEquipmentById(id);
+  }
 }
