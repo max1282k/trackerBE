@@ -67,12 +67,18 @@ export class AuthController {
   async getAdminsByOrganization(
     @Body() data: AdminFiltrationDTO,
     @Query('limit') limit = 10,
-    @Query('offset') offset = 0
+    @Query('offset') offset = 0,
   ) {
-    const filteredAdmins = await this.authService.getAdminsByOrganization(data, limit, offset);
-    return { admins: filteredAdmins.admins, totalCount: filteredAdmins.totalCount };
+    const filteredAdmins = await this.authService.getAdminsByOrganization(
+      data,
+      limit,
+      offset,
+    );
+    return {
+      admins: filteredAdmins.admins,
+      totalCount: filteredAdmins.totalCount,
+    };
   }
-  
 
   @ApiBearerAuth()
   @UseGuards(JwtSuperAdminAuthGuard)
@@ -83,12 +89,15 @@ export class AuthController {
   async getUsersByOrganization(
     @Body() data: AdminFiltrationDTO,
     @Query('limit') limit = 10,
-    @Query('offset') offset = 0
+    @Query('offset') offset = 0,
   ) {
-    const filteredUsers = await this.authService.getUsersByOrganization(data, limit, offset);
+    const filteredUsers = await this.authService.getUsersByOrganization(
+      data,
+      limit,
+      offset,
+    );
     return { users: filteredUsers.users, totalCount: filteredUsers.totalCount };
   }
-  
 
   @Post('adminLogin')
   async adminLogin(
@@ -99,6 +108,17 @@ export class AuthController {
     const { token } = data;
     response.cookie('token', token, { httpOnly: true, secure: true });
     return this.authService.adminLogin(adminLoginDto);
+  }
+
+  @Post('serverLogin')
+  async serverLogin(
+    @Body() adminLoginDto: AdminLoginDTO,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    const data = await this.authService.serverLogin(adminLoginDto);
+    const { token } = data;
+    response.cookie('token', token, { httpOnly: true, secure: true });
+    return this.authService.serverLogin(adminLoginDto);
   }
 
   @ApiBearerAuth()

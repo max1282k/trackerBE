@@ -8,6 +8,9 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Equipment } from '../schema/equipment.schema';
 import { CreateEquipmentDTO } from './dto/createEquipment.dto';
+import { EditInstantParams } from './dto/instantParams.dto';
+import { FixedParamsDTO } from './dto/fixedParams.dto';
+import { ImeiDTO } from './dto/imeiDTO.dto';
 
 @Injectable()
 export class EquipmentService {
@@ -56,6 +59,71 @@ export class EquipmentService {
     }
   }
 
+  async editInstantParams(imei: string, newData: EditInstantParams) {
+    try {
+      // Check if IMEI already exists in the database
+      const existingEquipment = await this._equipmentModel.findOne({ imei });
+
+      if (!existingEquipment) {
+        throw new Error('Equipment not found');
+      }
+
+      // Update the equipment with new data
+      await this._equipmentModel.findOneAndUpdate({ imei }, newData);
+
+      // Optionally, you can fetch the updated equipment data and return it
+      const updatedEquipment = await this._equipmentModel.findOne({ imei });
+      return updatedEquipment;
+    } catch (error) {
+      console.error(error);
+      // Depending on your requirement, you may want to throw a specific exception type
+      throw new BadRequestException('Failed to update equipment');
+    }
+  }
+
+  async editFixedParams(id: string, newData: FixedParamsDTO) {
+    try {
+      // Check if IMEI already exists in the database
+      const existingEquipment = await this._equipmentModel.findOne({ _id: id });
+
+      if (!existingEquipment) {
+        throw new Error('Equipment not found');
+      }
+
+      // Update the equipment with new data
+      await this._equipmentModel.findOneAndUpdate({ _id: id }, newData);
+
+      // Optionally, you can fetch the updated equipment data and return it
+      const updatedEquipment = await this._equipmentModel.findOne({ _id: id });
+      return updatedEquipment;
+    } catch (error) {
+      console.error(error);
+      // Depending on your requirement, you may want to throw a specific exception type
+      throw new BadRequestException('Failed to update equipment');
+    }
+  }
+
+  async editIMEI(id: string, newData: ImeiDTO) {
+    try {
+      // Check if IMEI already exists in the database
+      const existingEquipment = await this._equipmentModel.findOne({ _id: id });
+
+      if (!existingEquipment) {
+        throw new Error('Equipment not found');
+      }
+
+      // Update the equipment with new data
+      await this._equipmentModel.findOneAndUpdate({ _id: id }, newData);
+
+      // Optionally, you can fetch the updated equipment data and return it
+      const updatedEquipment = await this._equipmentModel.findOne({ _id: id });
+      return updatedEquipment;
+    } catch (error) {
+      console.error(error);
+      // Depending on your requirement, you may want to throw a specific exception type
+      throw new BadRequestException('Failed to update equipment');
+    }
+  }
   async getEquipment() {
     try {
       const equipments = await this._equipmentModel.find();
