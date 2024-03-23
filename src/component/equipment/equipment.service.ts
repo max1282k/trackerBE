@@ -19,6 +19,8 @@ export class EquipmentService {
     private readonly _equipmentModel: Model<Equipment>,
   ) {}
 
+
+
   async createEquipment(data: CreateEquipmentDTO) {
     try {
       const existingEquipment = await this._equipmentModel.findOne({
@@ -27,6 +29,12 @@ export class EquipmentService {
 
       if (existingEquipment) {
         throw new Error('Equipment with this IMEI already exists.');
+      }
+      if (Number(data?.latitude)<-90 || Number(data?.latitude)>90) {
+        throw new Error('Latitude must be between -90 and 90');
+      }
+      if (Number(data?.longitude)<-180 || Number(data?.longitude)>180) {
+        throw new Error('Longitude must be between -180 and 180');
       }
       const newEquipment = await this._equipmentModel.create(data);
       return newEquipment;
@@ -45,7 +53,12 @@ export class EquipmentService {
       if (!existingEquipment) {
         throw new Error('Equipment not found');
       }
-
+      if (Number(newData?.latitude)<-90 || Number(newData?.latitude)>90) {
+        throw new Error('Latitude must be between -90 and 90');
+      }
+      if (Number(newData?.longitude)<-180 || Number(newData?.longitude)>180) {
+        throw new Error('Longitude must be between -180 and 180');
+      }
       // Update the equipment with new data
       await this._equipmentModel.findOneAndUpdate({ imei }, newData);
 
@@ -55,7 +68,7 @@ export class EquipmentService {
     } catch (error) {
       console.error(error);
       // Depending on your requirement, you may want to throw a specific exception type
-      throw new BadRequestException('Failed to update equipment');
+      throw new BadRequestException(error.message);
     }
   }
 
@@ -67,7 +80,6 @@ export class EquipmentService {
       if (!existingEquipment) {
         throw new Error('Equipment not found');
       }
-
       // Update the equipment with new data
       await this._equipmentModel.findOneAndUpdate({ imei }, newData);
 
@@ -89,7 +101,6 @@ export class EquipmentService {
       if (!existingEquipment) {
         throw new Error('Equipment not found');
       }
-
       // Update the equipment with new data
       await this._equipmentModel.findOneAndUpdate({ _id: id }, newData);
 

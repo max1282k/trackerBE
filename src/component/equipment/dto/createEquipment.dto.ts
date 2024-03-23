@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ObjectId } from 'mongoose';
 
 export class CreateEquipmentDTO {
   @ApiProperty()
@@ -99,8 +98,8 @@ export class CreateEquipmentDTO {
   transmissionWarningPID?: string;
 
   @ApiProperty()
-  latitude?: string;
+  latitude?: number;
 
   @ApiProperty()
-  longitude?: string;
+  longitude?: number;
 }
