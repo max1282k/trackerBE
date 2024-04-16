@@ -86,7 +86,7 @@ export const getAddUserEmail = (
                 </p>
                 <h6 style="font-weight: bold; margin-bottom: 0.75rem">
                   <a
-                    href="http://localhost:3000/verifyUserPage?email=${email}&otp=${otp}"
+                    href="https://platino-fe.netlify.app/verifyUserPage?email=${email}&otp=${otp}"
                     style="color: #100d0d; font-weight: 700; font-size: 16px"
                   >
                     [Registration Link]

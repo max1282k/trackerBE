@@ -16,7 +16,7 @@ export class Equipment extends Document {
   machineName: string;
 
   @Prop({ required: true })
-  client: string;
+  organization: string;
 
   @Prop({ required: true })
   machineModel: string;

@@ -8,7 +8,7 @@ export class FixedParamsDTO {
   machineName: string;
 
   @ApiProperty()
-  client: string;
+  organization: string;
 
   @ApiProperty()
   machineModel: string;
@@ -42,4 +42,5 @@ export class FixedParamsDTO {
 
   @ApiProperty()
   equipmentModel: string;
+
 }

@@ -86,7 +86,7 @@ export const getAddAdminEmail = (
                 </p>
                 <h6 style="font-weight: bold; margin-bottom: 0.75rem">
                   <a
-                    href="http://localhost:3000/verifyAdminPage?email=${email}&otp=${otp}"
+                    href="https://platino-fe.netlify.app/verifyAdminPage?email=${email}&otp=${otp}"
                     style="color: #100d0d; font-weight: 700; font-size: 16px"
                   >
                     [Registration Link]
