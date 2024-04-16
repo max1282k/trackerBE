@@ -103,6 +103,13 @@ export class Equipment extends Document {
 
   @Prop()
   longitude?: number;
+
+  @Prop()
+  batteryVoltage?: number;
+
+  @Prop()
+  hoursOfOperation?: number;
+
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);

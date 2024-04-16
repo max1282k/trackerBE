@@ -52,4 +52,10 @@ export class EditInstantParams {
 
   @ApiProperty()
   transmissionWarningPID?: string;
+
+  @ApiProperty()
+  batteryVoltage?: number;
+
+  @ApiProperty()
+  hoursOfOperation?: number;
 }

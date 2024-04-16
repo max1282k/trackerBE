@@ -102,4 +102,10 @@ export class CreateEquipmentDTO {
 
   @ApiProperty()
   longitude?: number;
+
+  @ApiProperty()
+  batteryVoltage?: number;
+
+  @ApiProperty()
+  hoursOfOperation?: number;
 }
