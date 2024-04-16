@@ -110,6 +110,24 @@ export class Equipment extends Document {
   @Prop()
   hoursOfOperation?: number;
 
+  @Prop()
+  DI1?: number;
+
+  @Prop()
+  DI2?: number;
+
+  @Prop()
+  DO1?: number;
+
+  @Prop()
+  DO2?: number;
+
+  @Prop()
+  AO1?: number;
+
+  @Prop()
+  AO2?: number;
+
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);

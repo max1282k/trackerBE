@@ -58,4 +58,22 @@ export class EditInstantParams {
 
   @ApiProperty()
   hoursOfOperation?: number;
+
+  @ApiProperty()
+  DI1?: number;
+
+  @ApiProperty()
+  DI2?: number;
+
+  @ApiProperty()
+  DO1?: number;
+
+  @ApiProperty()
+  DO2?: number;
+
+  @ApiProperty()
+  AO1?: number;
+
+  @ApiProperty()
+  AO2?: number;
 }
