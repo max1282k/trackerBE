@@ -122,8 +122,8 @@ export class CreateEquipmentDTO {
   DO2?: number;
 
   @ApiProperty()
-  AO1?: number;
+  AI1?: number;
 
   @ApiProperty()
-  AO2?: number;
+  AI2?: number;
 }

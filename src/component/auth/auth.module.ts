@@ -20,7 +20,7 @@ export class AuthModule {
 
         JwtModule.register({
           secret: process.env.JWT_SECRET,
-          signOptions: { expiresIn: '9999999999s' },
+          signOptions: { expiresIn: '30s' },
         }),
       ],
 
