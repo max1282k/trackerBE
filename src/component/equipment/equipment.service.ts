@@ -39,16 +39,14 @@ export class EquipmentService {
       const newEquipment = await this._equipmentModel.create(data);
       return newEquipment;
     } catch (error) {
-      console.log(error?.message);
-      // Depending on your framework and requirements, you may want to handle different types of errors differently
       throw new BadRequestException(error?.message);
     }
   }
 
-  async editEquipment(imei: string, newData: CreateEquipmentDTO) {
+  async editEquipment(_id: string, newData: CreateEquipmentDTO) {
     try {
       // Check if IMEI already exists in the database
-      const existingEquipment = await this._equipmentModel.findOne({ imei });
+      const existingEquipment = await this._equipmentModel.findOne({ _id });
 
       if (!existingEquipment) {
         throw new Error('Equipment not found');
@@ -60,10 +58,10 @@ export class EquipmentService {
         throw new Error('Longitude must be between -180 and 180');
       }
       // Update the equipment with new data
-      await this._equipmentModel.findOneAndUpdate({ imei }, newData);
+      await this._equipmentModel.findOneAndUpdate({ _id }, newData);
 
       // Optionally, you can fetch the updated equipment data and return it
-      const updatedEquipment = await this._equipmentModel.findOne({ imei });
+      const updatedEquipment = await this._equipmentModel.findOne({ _id });
       return updatedEquipment;
     } catch (error) {
       console.error(error);
@@ -149,6 +147,19 @@ export class EquipmentService {
       return equipment;
     } catch (error) {
       throw new NotFoundException(`Equipment with id ${id} not found`);
+    }
+  }
+  async deleteEquipment(data: any) {
+    try {
+      const deletedEquipment = await this._equipmentModel.findByIdAndDelete(data.id);
+
+      if (!deletedEquipment) {
+        throw new BadRequestException('Equipment not found');
+      }
+
+      return deletedEquipment;
+    } catch (error) {
+      throw new BadRequestException(error?.message);
     }
   }
 }

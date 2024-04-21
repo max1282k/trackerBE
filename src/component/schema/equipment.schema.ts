@@ -9,42 +9,42 @@ export class Equipment extends Document {
   @Prop()
   equipmentModel: string;
 
-  @Prop({ required: true })
+  @Prop()
   imei: string;
 
-  @Prop({ required: true })
+  @Prop()
   machineName: string;
 
-  @Prop({ required: true })
+  @Prop()
   organization: string;
 
-  @Prop({ required: true })
+  @Prop()
   machineModel: string;
 
-  @Prop({ required: true })
+  @Prop()
   brand: string;
 
-  @Prop({ required: true })
+  @Prop()
   category: string;
 
-  @Prop({ required: true })
+  @Prop()
   states: string;
 
-  @Prop({ required: true })
+  @Prop()
   department: string;
 
-  @Prop({ required: true })
-  interval: string;
-  @Prop({ required: true })
+  @Prop()
+  maintainanceInterval: string;
+  @Prop()
   lastMaintenance: string;
 
-  @Prop({ required: true })
+  @Prop()
   initialMaintenance: string;
 
-  @Prop({ required: true })
+  @Prop()
   smartDevice: boolean;
 
-  @Prop({ required: true })
+  @Prop()
   serialNumber: string;
 
   @Prop()
@@ -127,6 +127,9 @@ export class Equipment extends Document {
 
   @Prop()
   AI2?: number;
+
+  @Prop()
+  user?: string;
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);

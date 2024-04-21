@@ -14,7 +14,7 @@ export class CreateEquipmentDTO {
   client: string;
 
   @ApiProperty()
-  machineModel: string;
+  machineModel?: string;
 
   @ApiProperty()
   brand: string;
@@ -29,7 +29,7 @@ export class CreateEquipmentDTO {
   department: string;
 
   @ApiProperty()
-  interval: string;
+  maintainanceInterval: string;
 
   @ApiProperty()
   lastMaintenance: string;
@@ -126,4 +126,7 @@ export class CreateEquipmentDTO {
 
   @ApiProperty()
   AI2?: number;
+
+  @ApiProperty()
+  user?: string;
 }

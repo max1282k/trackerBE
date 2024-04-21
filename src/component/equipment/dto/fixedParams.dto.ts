@@ -43,4 +43,7 @@ export class FixedParamsDTO {
   @ApiProperty()
   equipmentModel: string;
 
+  @ApiProperty()
+  user: string;
+
 }

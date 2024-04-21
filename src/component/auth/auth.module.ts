@@ -17,10 +17,9 @@ export class AuthModule {
         MongooseModule.forFeature([
           { name: AdminRegistration.name, schema: AdminRegistrationSchema },
         ]),
-
         JwtModule.register({
           secret: process.env.JWT_SECRET,
-          signOptions: { expiresIn: '30s' },
+          signOptions: { expiresIn: '7200s' },
         }),
       ],
 

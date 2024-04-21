@@ -31,13 +31,13 @@ export class EquipmentController {
   @ApiBearerAuth()
   @UseGuards(JwtSuperAdminAuthGuard)
   @UseGuards(JwtAuthGuard)
-  @Post('editEquipment/:imei')
+  @Post('editEquipment/:id')
   async editEquipment(
     @Body() equipmentData: CreateEquipmentDTO,
-    @Param('imei') imei: string,
+    @Param('id') id: string,
   ) {
     const newEquipment = await this.equipmentService.editEquipment(
-      imei,
+      id,
       equipmentData,
     );
     return newEquipment;
@@ -99,5 +99,14 @@ export class EquipmentController {
   @Get('getEquipmentById/:id')
   async getEquipmentById(@Param('id') id: string) {
     return this.equipmentService.getEquipmentById(id);
+  }
+
+  @ApiBearerAuth()
+  @UseGuards(JwtSuperAdminAuthGuard)
+  @UseGuards(JwtAuthGuard)
+  @Post('deleteEquipment')
+  async deleteEquipment(@Body() deviceData: any) {
+    const deletedEquipment = await this.equipmentService.deleteEquipment(deviceData);
+    return deletedEquipment;
   }
 }

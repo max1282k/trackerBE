@@ -30,7 +30,7 @@ export class AuthService {
 
   private generateJwtToken(payload: any): string {
     const token = `Bearer ${jwt.sign(payload, process.env.JWT_SECRET, {
-      expiresIn: '1h',
+      expiresIn: '4h',
     })}`;
     return token;
   }
