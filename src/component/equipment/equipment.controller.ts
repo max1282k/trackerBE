@@ -31,13 +31,13 @@ export class EquipmentController {
   @ApiBearerAuth()
   @UseGuards(JwtSuperAdminAuthGuard)
   @UseGuards(JwtAuthGuard)
-  @Post('editEquipment/:id')
+  @Post('editEquipment/:idOrImei')
   async editEquipment(
     @Body() equipmentData: CreateEquipmentDTO,
-    @Param('id') id: string,
+    @Param('idOrImei') idOrImei: string,
   ) {
     const newEquipment = await this.equipmentService.editEquipment(
-      id,
+      idOrImei,
       equipmentData,
     );
     return newEquipment;
