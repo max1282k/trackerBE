@@ -27,7 +27,7 @@ export class EquipmentService {
         imei: data?.imei,
       });
 
-      if (existingEquipment) {
+      if (existingEquipment && data?.imei) {
         throw new Error('Equipment with this IMEI already exists.');
       }
       if (Number(data?.latitude)<-90 || Number(data?.latitude)>90) {

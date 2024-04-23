@@ -35,7 +35,7 @@ export class FixedParamsDTO {
   initialMaintenance: string;
 
   @ApiProperty()
-  smartDevice: boolean;
+  smartDevice: string;
 
   @ApiProperty()
   serialNumber: string;
@@ -46,4 +46,6 @@ export class FixedParamsDTO {
   @ApiProperty()
   user: string;
 
+  @ApiProperty()
+  maintenanceContract?: string;
 }

@@ -42,7 +42,7 @@ export class Equipment extends Document {
   initialMaintenance: string;
 
   @Prop()
-  smartDevice: boolean;
+  smartDevice: string;
 
   @Prop()
   serialNumber: string;
@@ -130,6 +130,9 @@ export class Equipment extends Document {
 
   @Prop()
   user?: string;
+
+  @Prop()
+  maintenanceContract?: string;
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);

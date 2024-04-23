@@ -11,7 +11,7 @@ export class CreateEquipmentDTO {
   machineName: string;
 
   @ApiProperty()
-  client: string;
+  organization: string;
 
   @ApiProperty()
   machineModel?: string;
@@ -38,7 +38,7 @@ export class CreateEquipmentDTO {
   initialMaintenance: string;
 
   @ApiProperty()
-  smartDevice: boolean;
+  smartDevice: string;
 
   @ApiProperty()
   serialNumber: string;
@@ -129,4 +129,7 @@ export class CreateEquipmentDTO {
 
   @ApiProperty()
   user?: string;
+
+  @ApiProperty()
+  maintenanceContract?: string;
 }
