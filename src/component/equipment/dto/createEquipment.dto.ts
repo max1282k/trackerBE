@@ -132,4 +132,16 @@ export class CreateEquipmentDTO {
 
   @ApiProperty()
   maintenanceContract?: string;
+
+  @ApiProperty()
+  state?: string;
+
+  @ApiProperty()
+  parameterGroup?: string;
+
+  @ApiProperty()
+  suspectParameter?: string;
+  
+  @ApiProperty()
+  stateUpdatedAt?: string;
 }

@@ -133,6 +133,18 @@ export class Equipment extends Document {
 
   @Prop()
   maintenanceContract?: string;
+
+  @Prop()
+  state?: string;
+
+  @Prop()
+  parameterGroup?: string;
+
+  @Prop()
+  suspectParameter?: string;
+  
+  @Prop()
+  stateUpdatedAt?: string;
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);
