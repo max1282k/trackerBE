@@ -109,4 +109,11 @@ export class EquipmentController {
     const deletedEquipment = await this.equipmentService.deleteEquipment(deviceData);
     return deletedEquipment;
   }
+
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Get('getEquipmentCounts')
+  async getEquipmentCounts() {
+    return this.equipmentService.getEquipmentCounts();
+  }
 }
