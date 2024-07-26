@@ -35,6 +35,7 @@ export class Equipment extends Document {
 
   @Prop()
   maintainanceInterval: string;
+
   @Prop()
   lastMaintenance: string;
 
@@ -142,9 +143,108 @@ export class Equipment extends Document {
 
   @Prop()
   suspectParameter?: string;
-  
+
   @Prop()
   stateUpdatedAt?: string;
+
+  @Prop()
+  torqueMode: string;
+
+  @Prop()
+  driverDemandTorquePercentage: number;
+
+  @Prop()
+  actualTorquePercentage: number;
+
+  @Prop()
+  engineDemandTorquePercentage: number;
+
+  @Prop()
+  acceleratorPedalLowIdleSwitch: string;
+
+  @Prop()
+  acceleratorPedalKickdownSwitch: string;
+
+  @Prop()
+  roadSpeedLimitStatus: string;
+
+  @Prop()
+  acceleratorPedalPosition: number;
+
+  @Prop()
+  percentLoadAtCurrentSpeed: number;
+
+  @Prop()
+  remoteAcceleratorPedalPosition: number;
+
+  @Prop()
+  twoSpeedAxleSwitch: string;
+
+  @Prop()
+  parkingBrakeSwitch: string;
+
+  @Prop()
+  cruiseControlPauseSwitch: string;
+
+  @Prop()
+  cruiseControlActive: string;
+
+  @Prop()
+  cruiseControlEnableSwitch: string;
+
+  @Prop()
+  brakeSwitch: string;
+
+  @Prop()
+  clutchSwitch: string;
+
+  @Prop()
+  cruiseControlSetSwitch: string;
+
+  @Prop()
+  cruiseControlCoastSwitch: string;
+
+  @Prop()
+  cruiseControlResumeSwitch: string;
+
+  @Prop()
+  cruiseControlAccelerateSwitch: string;
+
+  @Prop()
+  cruiseControlSetSpeed: number;
+
+  @Prop()
+  ptoState: string;
+
+  @Prop()
+  cruiseControlStates: string;
+
+  @Prop()
+  idleIncrementSwitch: string;
+
+  @Prop()
+  idleDecrementSwitch: string;
+
+  @Prop()
+  engineTestModeSwitch: string;
+
+  @Prop()
+  engineShutdownOverrideSwitch: string;
+
+  @Prop()
+  preFilterOilPressure: number;
+
+  @Prop()
+  exhaustGasPressure: number;
+
+  @Prop()
+  fuelRackPosition: number;
+
+  @Prop()
+  massFlowToEngine: number;
+
+  @Prop()
+  instantaneousBrakePower: number;
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);

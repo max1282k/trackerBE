@@ -141,7 +141,106 @@ export class CreateEquipmentDTO {
 
   @ApiProperty()
   suspectParameter?: string;
-  
+
   @ApiProperty()
   stateUpdatedAt?: string;
+
+  @ApiProperty()
+  torqueMode: string;
+
+  @ApiProperty()
+  driverDemandTorquePercentage: number;
+
+  @ApiProperty()
+  actualTorquePercentage: number;
+
+  @ApiProperty()
+  engineDemandTorquePercentage: number;
+
+  @ApiProperty()
+  acceleratorPedalLowIdleSwitch: string;
+
+  @ApiProperty()
+  acceleratorPedalKickdownSwitch: string;
+
+  @ApiProperty()
+  roadSpeedLimitStatus: string;
+
+  @ApiProperty()
+  acceleratorPedalPosition: number;
+
+  @ApiProperty()
+  percentLoadAtCurrentSpeed: number;
+
+  @ApiProperty()
+  remoteAcceleratorPedalPosition: number;
+
+  @ApiProperty()
+  twoSpeedAxleSwitch: string;
+
+  @ApiProperty()
+  parkingBrakeSwitch: string;
+
+  @ApiProperty()
+  cruiseControlPauseSwitch: string;
+
+  @ApiProperty()
+  cruiseControlActive: string;
+
+  @ApiProperty()
+  cruiseControlEnableSwitch: string;
+
+  @ApiProperty()
+  brakeSwitch: string;
+
+  @ApiProperty()
+  clutchSwitch: string;
+
+  @ApiProperty()
+  cruiseControlSetSwitch: string;
+
+  @ApiProperty()
+  cruiseControlCoastSwitch: string;
+
+  @ApiProperty()
+  cruiseControlResumeSwitch: string;
+
+  @ApiProperty()
+  cruiseControlAccelerateSwitch: string;
+
+  @ApiProperty()
+  cruiseControlSetSpeed: number;
+
+  @ApiProperty()
+  ptoState: string;
+
+  @ApiProperty()
+  cruiseControlStates: string;
+
+  @ApiProperty()
+  idleIncrementSwitch: string;
+
+  @ApiProperty()
+  idleDecrementSwitch: string;
+
+  @ApiProperty()
+  engineTestModeSwitch: string;
+
+  @ApiProperty()
+  engineShutdownOverrideSwitch: string;
+
+  @ApiProperty()
+  preFilterOilPressure: number;
+
+  @ApiProperty()
+  exhaustGasPressure: number;
+
+  @ApiProperty()
+  fuelRackPosition: number;
+
+  @ApiProperty()
+  massFlowToEngine: number;
+
+  @ApiProperty()
+  instantaneousBrakePower: number;
 }
