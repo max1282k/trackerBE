@@ -29,7 +29,7 @@ export class EquipmentController {
   }
 
   @ApiBearerAuth()
-  @UseGuards(JwtSuperAdminAuthGuard)
+  @UseGuards(JwtServerAuthGuard)
   @UseGuards(JwtAuthGuard)
   @Post('editEquipment/:idOrImei')
   async editEquipment(
@@ -106,7 +106,8 @@ export class EquipmentController {
   @UseGuards(JwtAuthGuard)
   @Post('deleteEquipment')
   async deleteEquipment(@Body() deviceData: any) {
-    const deletedEquipment = await this.equipmentService.deleteEquipment(deviceData);
+    const deletedEquipment =
+      await this.equipmentService.deleteEquipment(deviceData);
     return deletedEquipment;
   }
 
