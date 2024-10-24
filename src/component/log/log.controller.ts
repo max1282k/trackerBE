@@ -38,6 +38,13 @@ export class LogController {
   }
 
   @ApiTags()
+  @Post('getCsv')
+  async getCsv() {
+    const logs = await this.logService.getCsv();
+    return logs;
+  }
+
+  @ApiTags()
   @Get('getLogsByImei/:imei')
   async getLogsByImei(
     @Param('imei') imei: string,
