@@ -9,6 +9,7 @@ import { OrganizationModule } from './component/organization/organization.module
 import { DeviceModule } from './component/device/device.module';
 import { AdminModule } from './component/admin/admin.module';
 import { EquipmentModule } from './component/equipment/equipment.module';
+import { LogModule } from './component/log/log.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { EquipmentModule } from './component/equipment/equipment.module';
     DeviceModule.forRoot(),
     AdminModule.forRoot(),
     EquipmentModule.forRoot(),
+    LogModule,
   ],
   controllers: [AppController],
   providers: [AppService],
