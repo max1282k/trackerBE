@@ -23,7 +23,12 @@ export class LogService {
 
   async getAllLogs(limit: number, offset: number) {
     try {
-      const logs = await this._logModel.find().skip(offset).limit(limit);
+      const logs = await this._logModel
+        .find()
+        .sort({ createdAt: -1 }) // Sort by latest
+        .skip(offset)
+        .limit(limit);
+
       const totalLogs = await this._logModel.countDocuments();
 
       return {
@@ -39,6 +44,7 @@ export class LogService {
     try {
       const logs = await this._logModel
         .find({ imei })
+        .sort({ createdAt: -1 }) // Sort by latest
         .skip(offset)
         .limit(limit);
 
