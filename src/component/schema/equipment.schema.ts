@@ -128,6 +128,9 @@ export class Equipment extends Document {
 
   @Prop()
   AI2?: number;
+  
+  @Prop()  
+  AI3?: number;
 
   @Prop()
   user?: string;

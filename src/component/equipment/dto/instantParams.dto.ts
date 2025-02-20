@@ -76,4 +76,7 @@ export class EditInstantParams {
 
   @ApiProperty()
   AI2?: number;
+  
+  @ApiProperty()
+  AI3?: number;
 }

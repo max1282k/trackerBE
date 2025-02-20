@@ -128,6 +128,9 @@ export class CreateEquipmentDTO {
   AI2?: number;
 
   @ApiProperty()
+  AI3?: number;
+
+  @ApiProperty()
   user?: string;
 
   @ApiProperty()
