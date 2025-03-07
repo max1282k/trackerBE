@@ -29,8 +29,8 @@ export class EquipmentController {
   }
 
   @ApiBearerAuth()
-  @UseGuards(JwtServerAuthGuard)
-  @UseGuards(JwtAuthGuard)
+  //@UseGuards(JwtServerAuthGuard)
+  //@UseGuards(JwtAuthGuard)
   @Post('editEquipment/:idOrImei')
   async editEquipment(
     @Body() equipmentData: CreateEquipmentDTO,
