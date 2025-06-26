@@ -2,10 +2,13 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateEquipmentDTO {
   @ApiProperty()
-  imei: string;
+  manufacturer: string;
 
   @ApiProperty()
-  manufacturer: string;
+  equipmentModel: string;
+
+  @ApiProperty()
+  imei: string;
 
   @ApiProperty()
   machineName: string;
@@ -14,7 +17,7 @@ export class CreateEquipmentDTO {
   organization: string;
 
   @ApiProperty()
-  machineModel?: string;
+  machineModel: string;
 
   @ApiProperty()
   brand: string;
@@ -42,9 +45,6 @@ export class CreateEquipmentDTO {
 
   @ApiProperty()
   serialNumber: string;
-
-  @ApiProperty()
-  equipmentModel: string;
 
   @ApiProperty()
   speed?: string;
@@ -246,4 +246,149 @@ export class CreateEquipmentDTO {
 
   @ApiProperty()
   instantaneousBrakePower: number;
+
+  // New parameters added
+  @ApiProperty()
+  asrEngineControlActive?: string;
+
+  @ApiProperty()
+  asrBrakeControlActive?: string;
+
+  @ApiProperty()
+  absActive?: string;
+
+  @ApiProperty()
+  ebsBrakeSwitch?: string;
+
+  @ApiProperty()
+  brakePedalPosition?: number;
+
+  @ApiProperty()
+  absOffRoadSwitch?: string;
+
+  @ApiProperty()
+  asrOffRoadSwitch?: string;
+
+  @ApiProperty()
+  asrHillHolderSwitch?: string;
+
+  @ApiProperty()
+  tractionControlOverrideSwitch?: string;
+
+  @ApiProperty()
+  acceleratorInterlockSwitch?: string;
+
+  @ApiProperty()
+  engineDerateSwitch?: string;
+
+  @ApiProperty()
+  auxEngineShutdownSwitch?: string;
+
+  @ApiProperty()
+  remoteAcceleratorEnableSwitch?: string;
+
+  @ApiProperty()
+  engineRetarderSelection?: string;
+
+  @ApiProperty()
+  absFullyOperational?: string;
+
+  @ApiProperty()
+  ebsRedWarningSignal?: string;
+
+  @ApiProperty()
+  absEbsAmberWarningSignal?: string;
+
+  @ApiProperty()
+  atcAsrInformationSignal?: string;
+
+  @ApiProperty()
+  sourceAddressOfBrakeControl?: string;
+
+  @ApiProperty()
+  trailerAbsStatus?: string;
+
+  @ApiProperty()
+  trailerAbsWarning?: string;
+
+  @ApiProperty()
+  percentLoatAtCurrentSpeed?: number; // Note: This appears to be a typo for "Load"
+
+  @ApiProperty()
+  actualToquePercentage?: number; // Note: This appears to be a typo for "Torque"
+
+  @ApiProperty()
+  nominalFrictionTorquePercentage?: number;
+
+  @ApiProperty()
+  engineDesiredOperatingSpeed?: number;
+
+  @ApiProperty()
+  engineDesiredOperatingSpeedAssymetryAdjustment?: number;
+
+  @ApiProperty()
+  powerTakeoffOilTemperature?: number;
+
+  @ApiProperty()
+  powerTakeoffSpeed?: number;
+
+  @ApiProperty()
+  powerTakeoffSetSpeed?: number;
+
+  @ApiProperty()
+  ptoEnableSwitch?: string;
+
+  @ApiProperty()
+  remotePtoPreprogrammedSpeedControlSwitch?: string;
+
+  @ApiProperty()
+  remotePtoVariableSpeedControlSwitch?: string;
+
+  @ApiProperty()
+  ptoSetSwitch?: string;
+
+  @ApiProperty()
+  ptoCoastSwitch?: string;
+
+  @ApiProperty()
+  ptoResumeSwitch?: string;
+
+  @ApiProperty()
+  ptoAccelerateSwitch?: string;
+
+  @ApiProperty()
+  barometricPressure?: number;
+
+  @ApiProperty()
+  cabInteriorTemperature?: number;
+
+  @ApiProperty()
+  ambientAirTemperature?: number;
+
+  @ApiProperty()
+  airInletTemperature?: number;
+
+  @ApiProperty()
+  roadSurfaceTemperature?: number;
+
+  @ApiProperty()
+  particulateTrapInletPressure?: number;
+
+  @ApiProperty()
+  boostPressure?: number;
+
+  @ApiProperty()
+  intakeManifoldTemperature?: number;
+
+  @ApiProperty()
+  airInletPressure?: number;
+
+  @ApiProperty()
+  airFilter1DiffPressure?: number;
+
+  @ApiProperty()
+  coolantFilter1DiffPressure?: number;
+
+  @ApiProperty()
+  exhaustGasTemperature?: number;
 }

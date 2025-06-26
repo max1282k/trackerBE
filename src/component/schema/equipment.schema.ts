@@ -128,8 +128,8 @@ export class Equipment extends Document {
 
   @Prop()
   AI2?: number;
-  
-  @Prop()  
+
+  @Prop()
   AI3?: number;
 
   @Prop()
@@ -248,6 +248,151 @@ export class Equipment extends Document {
 
   @Prop()
   instantaneousBrakePower: number;
+
+  // New parameters added
+  @Prop()
+  asrEngineControlActive?: string;
+
+  @Prop()
+  asrBrakeControlActive?: string;
+
+  @Prop()
+  absActive?: string;
+
+  @Prop()
+  ebsBrakeSwitch?: string;
+
+  @Prop()
+  brakePedalPosition?: number;
+
+  @Prop()
+  absOffRoadSwitch?: string;
+
+  @Prop()
+  asrOffRoadSwitch?: string;
+
+  @Prop()
+  asrHillHolderSwitch?: string;
+
+  @Prop()
+  tractionControlOverrideSwitch?: string;
+
+  @Prop()
+  acceleratorInterlockSwitch?: string;
+
+  @Prop()
+  engineDerateSwitch?: string;
+
+  @Prop()
+  auxEngineShutdownSwitch?: string;
+
+  @Prop()
+  remoteAcceleratorEnableSwitch?: string;
+
+  @Prop()
+  engineRetarderSelection?: string;
+
+  @Prop()
+  absFullyOperational?: string;
+
+  @Prop()
+  ebsRedWarningSignal?: string;
+
+  @Prop()
+  absEbsAmberWarningSignal?: string;
+
+  @Prop()
+  atcAsrInformationSignal?: string;
+
+  @Prop()
+  sourceAddressOfBrakeControl?: string;
+
+  @Prop()
+  trailerAbsStatus?: string;
+
+  @Prop()
+  trailerAbsWarning?: string;
+
+  @Prop()
+  percentLoatAtCurrentSpeed?: number; // Note: This appears to be a typo for "Load"
+
+  @Prop()
+  actualToquePercentage?: number; // Note: This appears to be a typo for "Torque"
+
+  @Prop()
+  nominalFrictionTorquePercentage?: number;
+
+  @Prop()
+  engineDesiredOperatingSpeed?: number;
+
+  @Prop()
+  engineDesiredOperatingSpeedAssymetryAdjustment?: number;
+
+  @Prop()
+  powerTakeoffOilTemperature?: number;
+
+  @Prop()
+  powerTakeoffSpeed?: number;
+
+  @Prop()
+  powerTakeoffSetSpeed?: number;
+
+  @Prop()
+  ptoEnableSwitch?: string;
+
+  @Prop()
+  remotePtoPreprogrammedSpeedControlSwitch?: string;
+
+  @Prop()
+  remotePtoVariableSpeedControlSwitch?: string;
+
+  @Prop()
+  ptoSetSwitch?: string;
+
+  @Prop()
+  ptoCoastSwitch?: string;
+
+  @Prop()
+  ptoResumeSwitch?: string;
+
+  @Prop()
+  ptoAccelerateSwitch?: string;
+
+  @Prop()
+  barometricPressure?: number;
+
+  @Prop()
+  cabInteriorTemperature?: number;
+
+  @Prop()
+  ambientAirTemperature?: number;
+
+  @Prop()
+  airInletTemperature?: number;
+
+  @Prop()
+  roadSurfaceTemperature?: number;
+
+  @Prop()
+  particulateTrapInletPressure?: number;
+
+  @Prop()
+  boostPressure?: number;
+
+  @Prop()
+  intakeManifoldTemperature?: number;
+
+  @Prop()
+  airInletPressure?: number;
+
+  @Prop()
+  airFilter1DiffPressure?: number;
+
+  @Prop()
+  coolantFilter1DiffPressure?: number;
+
+  @Prop()
+  exhaustGasTemperature?: number;
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);
